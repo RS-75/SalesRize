@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SalesRize – The Closing Playbook</title>
+<meta name="description" content="Passe de commercial à consultant : discovery, reframe et décision. 12 modules et un plan d'entraînement de 30 jours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F1A2E;--paper:#F5F6F8;--blue:#2A44F5;--mist:#E1E5EE;--slate:#5B6578;--white:#fff;
+--d:'Bricolage Grotesque',system-ui,sans-serif;--s:'Newsreader',Georgia,serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 19px/1.6 var(--s)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{padding:22px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 22px var(--d);text-decoration:none;letter-spacing:-.02em}
+header a.l{font:500 16px var(--d);text-decoration:none;color:var(--slate)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:56px 0 88px}
+h1{font:800 clamp(40px,6vw,72px)/1.02 var(--d);letter-spacing:-.035em}
+.hero p.sub{margin:24px 0 32px;font-size:21px;color:var(--slate);max-width:30em}
+.btn{display:inline-block;background:var(--blue);color:var(--white);font:700 17px var(--d);padding:15px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--ink)}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+.facts{display:flex;gap:28px;margin-top:36px;font:500 15px var(--d);color:var(--slate);flex-wrap:wrap}
+.facts b{color:var(--ink);font-weight:700}
+.chain{list-style:none;padding:0;position:relative}
+.chain li{font:700 20px var(--d);padding:7px 0 7px 22px;border-left:2px solid var(--mist);position:relative}
+.chain li:nth-child(n){margin-left:calc(var(--i)*14px)}
+.chain li::before{content:"";position:absolute;left:-6px;top:50%;width:10px;height:10px;border-radius:50%;background:var(--ink)}
+.chain li:last-child{color:var(--blue);border-color:var(--blue)}
+.chain li:last-child::before{background:var(--blue)}
+.cap{font:500 14px var(--d);color:var(--slate);margin-top:16px}
+#cours{background:var(--white);padding:72px 0 96px;border-top:1px solid var(--mist)}
+#cours h2{font:800 clamp(30px,4vw,44px)/1.1 var(--d);letter-spacing:-.03em;margin-bottom:8px}
+.lead{color:var(--slate);margin-bottom:40px}
+.player{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+nav{position:sticky;top:20px}
+.bar{height:6px;background:var(--mist);border-radius:6px;overflow:hidden;margin:0 0 6px}
+.bar i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
+.pct{font:500 14px var(--d);color:var(--slate);margin-bottom:16px}
+nav button{display:flex;gap:12px;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;font:500 16px/1.3 var(--d);color:var(--slate);cursor:pointer}
+nav button:hover{background:var(--paper)}
+nav button[aria-current=true]{background:var(--ink);color:var(--white)}
+nav .n{min-width:22px;font-weight:700}
+nav .ok::after{content:"✓";margin-left:auto;color:var(--blue);font-weight:800}
+nav button[aria-current=true].ok::after{color:var(--white)}
+article{max-width:660px;min-height:480px}
+article h3{font:800 clamp(28px,3.5vw,40px)/1.1 var(--d);letter-spacing:-.03em;margin-bottom:24px}
+.mod{font:500 15px var(--d);color:var(--slate);margin-bottom:8px}
+.key{font:700 clamp(20px,2.4vw,25px)/1.35 var(--d);border-left:4px solid var(--blue);padding-left:20px;margin-bottom:28px;letter-spacing:-.01em}
+article ul{padding-left:1.1em;margin-bottom:28px}
+article li{margin-bottom:10px}
+article li::marker{color:var(--blue)}
+.ex{background:var(--paper);border-radius:14px;padding:22px 24px;margin-bottom:32px}
+.ex h4{font:700 17px var(--d);margin-bottom:6px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+footer{padding:40px 0;font:500 15px var(--d);color:var(--slate)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+#loader{position:fixed;inset:0;z-index:100;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .6s ease,visibility .6s}
+#loader.out{opacity:0;visibility:hidden}
+#loader .lg{font:800 clamp(40px,9vw,84px) var(--d);letter-spacing:-.04em;color:var(--white);display:flex;overflow:hidden}
+#loader .lg span{display:inline-block;transform:translateY(110%);animation:up .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--k)*55ms)}
+#loader .lg span:nth-child(n+6){color:#7F93FF}
+#loader .ln{width:min(220px,50vw);height:3px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+#loader .ln i{display:block;height:100%;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left;animation:ld 1.6s ease-in-out forwards}
+#loader .tg{font:500 14px var(--d);color:rgba(255,255,255,.55);letter-spacing:.02em}
+body.loading{overflow:hidden}
+@keyframes up{to{transform:none}}
+@keyframes ld{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){#loader .lg span{transform:none;animation:none}#loader .ln i{animation-duration:.01s}}
+@media(max-width:860px){
+.hero{grid-template-columns:1fr;padding:32px 0 56px;gap:40px}
+.player{grid-template-columns:1fr;gap:28px}
+nav{position:static}
+nav .list{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
+nav button{width:auto;white-space:nowrap;border:1.5px solid var(--mist)}
+nav .t{display:none}
+body{font-size:18px}}
+</style>
+</head>
+<body class="loading">
+<div id="loader" role="status" aria-label="Chargement de SalesRize">
+  <div class="lg" aria-hidden="true"><span style="--k:0">S</span><span style="--k:1">a</span><span style="--k:2">l</span><span style="--k:3">e</span><span style="--k:4">s</span><span style="--k:5">R</span><span style="--k:6">i</span><span style="--k:7">z</span><span style="--k:8">e</span></div>
+  <div class="ln"><i></i></div>
+  <div class="tg">No pain, no sales</div>
+</div>
+<noscript><style>#loader{display:none}body.loading{overflow:auto}</style></noscript>
+<header><div class="wrap"><a class="logo" href="#">SalesRize</a><a class="l" href="#cours">Le cours</a></div></header>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <h1>Comprendre avant de convaincre.</h1>
+    <p class="sub">Le manuel de terrain SalesRize pour passer de commercial à consultant : discovery, reframe et décision. Tu lis, tu t'entraînes à voix haute, tu ajustes.</p>
+    <div class="acts"><a class="btn" href="#cours">Commencer le module 1</a><a class="btn ghost" href="#cours" id="prog">Voir le programme</a></div>
+    <div class="facts"><span><b>12</b> modules</span><span><b>30 jours</b> d'entraînement</span><span><b>1</b> micro-ajustement par call</span></div>
+  </div>
+  <div aria-hidden="true">
+    <ol class="chain">
+      <li style="--i:0">Situation</li><li style="--i:1">Problème</li><li style="--i:2">Cause</li><li style="--i:3">Impact</li>
+      <li style="--i:4">Temps</li><li style="--i:5">Tentatives</li><li style="--i:6">Croyances</li><li style="--i:7">Décision</li>
+    </ol>
+    <p class="cap">La chaîne de profondeur : tu ne t'arrêtes pas au symptôme.</p>
+  </div>
+</section>
+
+<section id="cours">
+  <div class="wrap">
+    <h2>The Closing Playbook</h2>
+    <p class="lead">Un module à la fois. Ta progression est gardée sur cet appareil.</p>
+    <div class="player">
+      <nav aria-label="Modules">
+        <div class="t"><div class="bar"><i id="fill"></i></div><div class="pct" id="pct"></div></div>
+        <div class="list" id="list"></div>
+      </nav>
+      <article id="view" tabindex="-1" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>SalesRize · No pain, no sales</span><span>Méthode &amp; coaching : Walid Mellal</span></div></footer>
+
+<script>
+/* ====== CONTENU DES COURS : modifie ici (t = titre, k = principe, p = points, e = exercice) ====== */
+const MODULES=[
+{t:"Comprendre l'écosystème",k:"Un rendez-vous n'est pas automatiquement « prêt à acheter ».",p:["Le closer intervient dans un système : acquisition, setting, closing, delivery.","Inbound : le prospect vient vers toi, son niveau de conscience est souvent plus élevé.","Outbound : tu dois construire contexte et confiance plus vite."],e:"Dessine l'écosystème de l'offre que tu vends. Pour chaque étape : qui intervient, ce que le prospect sait déjà, ce qui a été promis, ce que tu dois encore vérifier."},
+{t:"Vendeur ou consultant",k:"Le consultant pose les bonnes questions pour savoir si la solution est réellement adaptée.",p:["Le commercial perçu veut convaincre. Le consultant veut comprendre.","Un refus de principe vise souvent l'étiquette « vendeur », pas ton offre.","Contextualise ton appel, montre ton côté humain, ralentis."],e:"Enregistre deux introductions de 30 secondes, une « commerciale » et une « consultant ». Compare vitesse, ton, nombre d'arguments et place laissée au prospect."},
+{t:"Les niveaux de conscience",k:"Deux prospects sur le même appel peuvent être à des kilomètres l'un de l'autre.",p:["Niveau 1 : très conscient. Tu crées le match et sécurises la décision.","Niveau 2 : problème reconnu, solution floue. Tu clarifies le véhicule et les croyances.","Niveau 3 : le système dysfonctionne, la cause reste floue. Tu fais émerger le problème et ses conséquences.","Niveau 4 : faible conscience. Tu explores avant toute proposition.","Question clé : « Qu'est-ce qui se passe si rien ne change ? »"],e:"Explique les quatre niveaux sans regarder le tableau. Si tu ne peux pas les expliquer simplement, tu ne les maîtrises pas encore."},
+{t:"B2C et B2B",k:"B2C : l'identité au centre. B2B : le système au centre.",p:["B2C : émotions, identité, discipline, croyances. Pourquoi je n'arrive pas à devenir cette personne ?","B2B : metrics, organisation, process, ressources. Pourquoi le système ne produit-il pas le résultat attendu ?"],e:"Prends un même problème, « augmenter les revenus ». Écris 5 questions B2C centrées sur la personne, puis 5 questions B2B centrées sur le système."},
+{t:"Lire les profils DISC",k:"Adapte la forme sans perdre le fond.",p:["Rouge : direct, orienté résultat. Va droit au but et garde ton cadre.","Jaune : expressif. Canalise sans casser l'énergie.","Vert : harmonie. Sécurise la vérité derrière l'accord.","Bleu : analytique. Structure, prouve, ne survends pas.","Ne joue pas un personnage : adapte la vitesse, la précision, l'espace de parole et le niveau de preuve."],e:"Repense à ton dernier call. Quel profil dominait ? Qu'aurais-tu changé dans ta structure ?"},
+{t:"Voix, énergie, authenticité",k:"Maîtrise le fond, puis fais vivre la forme.",p:["Accentue certains mots, mets de l'émotion, ralentis, évite les tics de langage.","Dire « je ne sais pas » peut renforcer la confiance.","Question sous la question : « Il y a une raison particulière qui te pousse à me poser cette question ? »"],e:"Dis « Bonjour, comment tu vas ? » avec enthousiasme, puis curiosité, puis calme et autorité, puis surprise. Réécoute : l'émotion s'entend-elle sans devenir théâtrale ?"},
+{t:"Cadrer avec OPA",k:"OPA : Objectif, Plan, Action.",p:["Objectif : pourquoi l'appel existe et ce qu'on vérifie.","Plan : comment l'échange va se dérouler.","Action : deux issues possibles, continuer si ça matche, se quitter proprement sinon.","« L'objectif de cet appel, c'est de voir si ce qu'on propose a réellement du sens pour toi. » À reformuler avec tes mots.","Ouvre ensuite : « Qu'est-ce qui t'a motivé à prendre cet appel ? »"],e:"Enregistre ton cadrage OPA en 45 secondes, avec tes propres mots."},
+{t:"La discovery profonde",k:"Plus tu découvres tôt les vraies raisons qui bloquent, moins tu combats d'objections à la fin.",p:["Chaîne de profondeur : situation, problème, cause, impact, temps, tentatives, croyances, décision.","Quand une réponse est superficielle, reste dessus.","« Qu'est-ce que tu veux dire exactement par là ? »","« Si on avance de six mois sans changement, qu'est-ce qui se passe ? »"],e:"Réponse du prospect : « Je veux gagner plus ». Écris une chaîne de 7 questions qui va du symptôme à la cause, puis à l'impact."},
+{t:"SPIN et questions ouvertes",k:"Le SPIN structure ta lecture. Il ne remplace pas l'écoute.",p:["Situation : le contexte actuel. Problem : les frictions.","Implication : l'impact et les conséquences. Need-payoff : ce que le changement rend possible.","Ne reste pas uniquement dans la douleur : fais aussi verbaliser la sortie.","Écoute les mots du prospect et rebondis dessus, sinon c'est un questionnaire administratif."],e:"Analyse un de tes calls en quatre colonnes : Situation, Problème, Implication, Need-payoff."},
+{t:"Reframe et objections",k:"Rends visibles les conséquences des deux scénarios, sans imposer de conclusion.",p:["1. Valide. 2. Clarifie la croyance. 3. Questionne sa logique. 4. Expose deux scénarios. 5. Laisse le prospect conclure.","Croyance : reviens aux tentatives passées. Timing : explore le coût de l'inaction.","Valeur : comprends la perception avant de parler financement. Logistique : traite les options factuellement.","Garde-fou : ne pousse jamais quelqu'un vers un risque financier déraisonnable."],e:"« Si tu continues avec le même système six mois, qu'est-ce qui change ? » Écris 3 reframes pour tes objections les plus fréquentes."},
+{t:"Le playbook d'appel",k:"Une structure solide te permet de rester humain.",p:["Connexion, OPA, ouverture, discovery, synthèse, transition, proposition, décision, logistique.","Erreurs classiques : surjouer, pitcher trop tôt, interpréter sans valider, présenter toutes les features, débattre.","Avant l'appel : je suis prêt à dire non si ça ne matche pas.","Après l'appel : quel est l'unique micro-ajustement pour le prochain call ?"],e:"Remplis la checklist après call sur ton prochain appel, par écrit."},
+{t:"Plan d'entraînement, 30 jours",k:"Le but n'est pas d'accumuler des concepts, mais de les transformer en réflexes.",p:["Semaine 1 : posture et intonation. 10 min d'enregistrement voix et 1 cadrage OPA par jour.","Semaine 2 : questions et profondeur. 1 chaîne de 7 questions par jour.","Semaine 3 : discovery et SPIN. Analyse d'un call par jour.","Semaine 4 : reframe et décision. Écris 3 reframes, puis joue-les à voix haute."],e:"Note-toi de 1 à 5 sur chaque compétence du playbook, puis refais-le à J+30."}
+];
+/* ====== FIN DU CONTENU ====== */
+
+const $=id=>document.getElementById(id);
+let done=[];try{done=JSON.parse(localStorage.getItem('sr-done')||'[]')}catch(e){}
+let cur=0;
+const save=()=>{try{localStorage.setItem('sr-done',JSON.stringify(done))}catch(e){}};
+
+function nav(){
+  $('list').innerHTML=MODULES.map((m,i)=>`<button data-i="${i}" class="${done.includes(i)?'ok':''}" ${i===cur?'aria-current="true"':''}><span class="n">${i+1}</span><span>${m.t}</span></button>`).join('');
+  const p=Math.round(done.length/MODULES.length*100);
+  $('fill').style.width=p+'%';$('pct').textContent=done.length+' / '+MODULES.length+' modules terminés';
+}
+function show(i,scroll){
+  cur=i;const m=MODULES[i];
+  $('view').innerHTML=`<div class="mod">Module ${i+1} sur ${MODULES.length}</div><h3>${m.t}</h3><p class="key">${m.k}</p><ul>${m.p.map(x=>`<li>${x}</li>`).join('')}</ul><div class="ex"><h4>Exercice</h4><p>${m.e}</p></div><div class="acts"><button class="btn" id="done">${done.includes(i)?'Module terminé ✓':'Marquer comme terminé'}</button>${i>0?'<button class="btn ghost" id="prev">Précédent</button>':''}${i<MODULES.length-1?'<button class="btn ghost" id="next">Suivant</button>':''}</div>`;
+  nav();history.replaceState(null,'','#module-'+(i+1));
+  if(scroll)$('view').scrollIntoView({block:'start'});
+}
+$('list').onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i,window.innerWidth<=860)};
+$('view').onclick=e=>{
+  if(e.target.id==='done'){done=done.includes(cur)?done.filter(x=>x!==cur):[...done,cur];save();show(cur)}
+  if(e.target.id==='next')show(cur+1,true);
+  if(e.target.id==='prev')show(cur-1,true);
+};
+/* Écran de chargement : durée minimale en ms (change 1800 pour l'allonger ou le raccourcir) */
+const MIN=1800,t0=Date.now();
+let entered=false;
+function enter(){
+  if(entered)return;entered=true;
+  const wait=Math.max(0,MIN-(Date.now()-t0));
+  setTimeout(()=>{$('loader').classList.add('out');document.body.classList.remove('loading');setTimeout(()=>$('loader').remove(),700)},wait);
+}
+if(document.readyState==='complete')enter();else addEventListener('load',enter);
+setTimeout(enter,5000);
+const h=location.hash.match(//module-(\d+)/);
+show(h&&MODULES[h[1]-1]?h[1]-1:0);
+</script>
+</body>
+</html>
