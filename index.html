@@ -16,7 +16,7 @@
   --t:'Playfair Display',Georgia,serif; --u:'Bricolage Grotesque',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{color-scheme:dark}
+html{color-scheme:dark;-webkit-text-size-adjust:100%}
 body{background:var(--noir);color:var(--creme);font:400 18px/1.65 var(--u);overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--orange-clair);outline-offset:3px}
@@ -106,13 +106,13 @@ h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em;line-height:1.2;margin
 .contact .lead{margin-top:0}
 form{padding:clamp(22px,3vw,36px);display:grid;gap:16px}
 label{font:500 .95rem var(--u);display:grid;gap:6px}
-input,textarea{font:400 1.05rem var(--u);padding:13px 16px;border:1px solid var(--trait);border-radius:14px;background:var(--braise);color:var(--creme);width:100%}
+input,textarea{font:400 1.05rem var(--u);padding:13px 16px;border:1px solid var(--trait);border-radius:14px;background:var(--braise);color:var(--creme);width:100%;-webkit-appearance:none;appearance:none}
 input:focus,textarea:focus{border-color:var(--orange);outline:none}
 textarea{min-height:130px;resize:vertical}
+form .btn{width:100%;text-align:center;font-size:1.05rem}
 .hp{position:absolute;left:-9999px;height:0;overflow:hidden}
 #statut{font-size:.95rem;min-height:1.4em}
 #statut.ok{color:var(--orange-clair)}
-#statut.err{color:#ff8a7a}
 
 @media(max-width:820px){
   .course,.contact{grid-template-columns:1fr}
@@ -192,10 +192,14 @@ textarea{min-height:130px;resize:vertical}
       <h2>Parlons-en.</h2>
       <p class="lead">Une question sur la formation ou sur l'accès ? Écris-nous, on répond rapidement.</p>
     </div>
-    <form class="glass" id="f">
+    <form class="glass" id="f" action="https://formsubmit.co/mellalwld@gmail.com" method="POST">
       <label>Nom<input name="nom" required autocomplete="name"></label>
       <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
       <label>Message<textarea name="message" required></textarea></label>
+      <input type="hidden" name="_subject" value="Nouveau message depuis SalesRize">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="_next" value="">
       <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="btn p" type="submit" id="envoi">Envoyer le message</button>
       <p id="statut" role="status" aria-live="polite"></p>
@@ -229,27 +233,17 @@ function afficher(premier){
 window.addEventListener('hashchange',function(){afficher(false)});
 afficher(true);
 
-// Contact : envoi par e-mail vers mellalwld@gmail.com (via FormSubmit)
-var form=document.getElementById('f'),statut=document.getElementById('statut'),btn=document.getElementById('envoi');
-form.addEventListener('submit',function(e){
-  e.preventDefault();
-  var d=new FormData(form);
-  btn.disabled=true;statut.className='';statut.textContent='Envoi en cours…';
-  fetch('https://formsubmit.co/ajax/mellalwld@gmail.com',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      nom:d.get('nom'),email:d.get('email'),message:d.get('message'),_honey:d.get('_honey'),
-      _subject:'Nouveau message depuis SalesRize',_template:'table'
-    })
-  }).then(function(r){return r.json()}).then(function(j){
-    if(j.success==='true'||j.success===true){
-      form.reset();statut.className='ok';statut.textContent='Message envoyé. On te répond rapidement.';
-    }else{throw new Error()}
-  }).catch(function(){
-    statut.className='err';statut.textContent="L'envoi a échoué. Réessaie dans un instant.";
-  }).then(function(){btn.disabled=false});
+// Contact : le formulaire part vers FormSubmit, puis revient ici avec « Message envoyé »
+var statut=document.getElementById('statut'),btn=document.getElementById('envoi');
+document.getElementById('_next').value=location.href.split(/[?#]/)[0]+'?envoye=1#contact';
+document.getElementById('f').addEventListener('submit',function(){
+  btn.disabled=true;btn.textContent='Envoi en cours…';
 });
+if(/[?&]envoye=1/.test(location.search)){
+  statut.className='ok';
+  statut.textContent='Message envoyé. On te répond rapidement.';
+  history.replaceState(null,'',location.href.split(/[?#]/)[0]+'#contact');
+}
 </script>
 </body>
 </html>
