@@ -20,4 +20,186 @@ a{color:inherit}
 header{padding:22px 0}
 header .wrap{display:flex;justify-content:space-between;align-items:center}
 .logo{font:800 22px var(--d);text-decoration:none;letter-spacing:-.02em}
-header
+header a.l{font:500 16px var(--d);text-decoration:none;color:var(--slate)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:56px 0 88px}
+h1{font:800 clamp(40px,6vw,72px)/1.02 var(--d);letter-spacing:-.035em}
+.hero p.sub{margin:24px 0 32px;font-size:21px;color:var(--slate);max-width:30em}
+.btn{display:inline-block;background:var(--blue);color:var(--white);font:700 17px var(--d);padding:15px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--ink)}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+.facts{display:flex;gap:28px;margin-top:36px;font:500 15px var(--d);color:var(--slate);flex-wrap:wrap}
+.facts b{color:var(--ink);font-weight:700}
+.chain{list-style:none;padding:0;position:relative}
+.chain li{font:700 20px var(--d);padding:7px 0 7px 22px;border-left:2px solid var(--mist);position:relative}
+.chain li:nth-child(n){margin-left:calc(var(--i)*14px)}
+.chain li::before{content:"";position:absolute;left:-6px;top:50%;width:10px;height:10px;border-radius:50%;background:var(--ink)}
+.chain li:last-child{color:var(--blue);border-color:var(--blue)}
+.chain li:last-child::before{background:var(--blue)}
+.cap{font:500 14px var(--d);color:var(--slate);margin-top:16px}
+#cours{background:var(--white);padding:72px 0 96px;border-top:1px solid var(--mist)}
+#cours h2{font:800 clamp(30px,4vw,44px)/1.1 var(--d);letter-spacing:-.03em;margin-bottom:8px}
+.lead{color:var(--slate);margin-bottom:40px}
+.player{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+nav{position:sticky;top:20px}
+.bar{height:6px;background:var(--mist);border-radius:6px;overflow:hidden;margin:0 0 6px}
+.bar i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
+.pct{font:500 14px var(--d);color:var(--slate);margin-bottom:16px}
+nav button{display:flex;gap:12px;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;font:500 16px/1.3 var(--d);color:var(--slate);cursor:pointer}
+nav button:hover{background:var(--paper)}
+nav button[aria-current=true]{background:var(--ink);color:var(--white)}
+nav .n{min-width:22px;font-weight:700}
+nav .ok::after{content:"✓";margin-left:auto;color:var(--blue);font-weight:800}
+nav button[aria-current=true].ok::after{color:var(--white)}
+article{max-width:660px;min-height:480px}
+article h3{font:800 clamp(28px,3.5vw,40px)/1.1 var(--d);letter-spacing:-.03em;margin-bottom:24px}
+.mod{font:500 15px var(--d);color:var(--slate);margin-bottom:8px}
+.key{font:700 clamp(20px,2.4vw,25px)/1.35 var(--d);border-left:4px solid var(--blue);padding-left:20px;margin-bottom:28px;letter-spacing:-.01em}
+article ul{padding-left:1.1em;margin-bottom:28px}
+article li{margin-bottom:10px}
+article li::marker{color:var(--blue)}
+.ex{background:var(--paper);border-radius:14px;padding:22px 24px;margin-bottom:32px}
+.ex h4{font:700 17px var(--d);margin-bottom:6px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+footer{padding:40px 0;font:500 15px var(--d);color:var(--slate)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+#loader{position:fixed;inset:0;z-index:100;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .4s ease,visibility .4s}
+#loader.out{opacity:0;visibility:hidden}
+#loader .lg{font:800 clamp(40px,9vw,84px) var(--d);letter-spacing:-.04em;color:var(--white);display:flex;overflow:hidden}
+#loader .lg span{display:inline-block;transform:translateY(110%);animation:up .4s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--k)*30ms)}
+#loader .lg span:nth-child(n+6){color:#7F93FF}
+#loader .ln{width:min(220px,50vw);height:3px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+#loader .ln i{display:block;height:100%;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left;animation:ld .6s ease-in-out forwards}
+#loader .tg{font:500 14px var(--d);color:rgba(255,255,255,.55);letter-spacing:.02em}
+body.loading{overflow:hidden}
+@keyframes up{to{transform:none}}
+@keyframes ld{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){#loader .lg span{transform:none;animation:none}#loader .ln i{animation-duration:.01s}}
+</style>
+</head>
+<body class="loading">
+<div id="loader" role="status" aria-label="Chargement de SalesRize">
+  <div class="lg" aria-hidden="true"><span style="--k:0">S</span><span style="--k:1">a</span><span style="--k:2">l</span><span style="--k:3">e</span><span style="--k:4">s</span><span style="--k:5">R</span><span style="--k:6">i</span><span style="--k:7">z</span><span style="--k:8">e</span></div>
+  <div class="ln"><i></i></div>
+  <div class="tg">No pain, no sales</div>
+</div>
+<noscript><style>#loader{display:none}body.loading{overflow:auto}</style></noscript>
+<header><div class="wrap"><a class="logo" href="#">SalesRize</a><a class="l" href="#cours">Le cours</a></div></header>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <h1>Comprendre avant de convaincre.</h1>
+    <p class="sub">Le manuel de terrain SalesRize pour passer de commercial à consultant : discovery, reframe et décision. Tu lis, tu t'entraînes à voix haute, tu ajustes.</p>
+    <div class="acts"><a class="btn" href="#cours">Commencer le module 1</a><a class="btn ghost" href="#cours" id="prog">Voir le programme</a></div>
+    <div class="facts"><span><b>12</b> modules</span><span><b>30 jours</b> d'entraînement</span><span><b>1</b> micro-ajustement par call</span></div>
+  </div>
+  <div aria-hidden="true">
+    <ol class="chain">
+      <li style="--i:0">Situation</li><li style="--i:1">Problème</li><li style="--i:2">Cause</li><li style="--i:3">Impact</li>
+      <li style="--i:4">Temps</li><li style="--i:5">Tentatives</li><li style="--i:6">Croyances</li><li style="--i:7">Décision</li>
+    </ol>
+    <p class="cap">La chaîne de profondeur : tu ne t'arrêtes pas au symptôme.</p>
+  </div>
+</section>
+
+<section id="cours">
+  <div class="wrap">
+    <h2>The Closing Playbook</h2>
+    <p class="lead">Un module à la fois. Ta progression est gardée sur cet appareil.</p>
+    <div class="player">
+      <nav aria-label="Modules">
+        <div class="t"><div class="bar"><i id="fill"></i></div><div class="pct" id="pct"></div></div>
+        <div class="list" id="list"></div>
+      </nav>
+      <article id="view" tabindex="-1" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>SalesRize · No pain, no sales</span><span>Méthode &amp; coaching : Walid Mellal</span></div></footer>
+
+<script>
+/* ====== CONTENU DES COURS ====== */
+const MODULES=[
+{t:"Comprendre l'écosystème",k:"Un closer n'agit jamais seul. Il intervient dans un système qui génère de l'attention, transforme cette attention en opportunités, qualifie, réalise la vente et délivre la promesse.",p:["Acquisition : Créer ou capter la demande. D'où viennent les prospects ?","Setting/qualification : Filtrer et préparer. Y a-t-il un problème, un besoin, un timing ?","Closing : Diagnostiquer et créer la décision. La solution matche-t-elle réellement ?","Inbound : Le prospect vient vers l'écosystème, son niveau de conscience est souvent plus élevé.","Outbound : L'écosystème va chercher le prospect, le contexte et la confiance sont à construire plus vite.","Règle : Un rendez-vous n'est pas automatiquement « prêt à acheter »."],e:"Dessine l'écosystème de l'offre que tu vends actuellement. Pour chaque étape, écris : qui intervient, ce que le prospect sait déjà, ce qui a été promis et ce que toi tu dois encore vérifier."},
+{t:"Vendeur ou consultant",k:"Le consultant ne cherche pas à faire matcher tout le monde avec sa solution. Il pose les bonnes questions pour déterminer si la solution est réellement adaptée.",p:["Commercial perçu : Veut convaincre, parle vite de l'offre, défend son produit, cherche le oui, récite.","Consultant : Veut comprendre, explore le contexte, diagnostique le problème, accepte aussi le non, s'adapte.","Un refus de principe n'est pas nécessairement une objection sur la valeur, c'est parfois un rejet de l'étiquette « vendeur ».","Contextualise pourquoi tu appelles, montre rapidement ton côté humain et connecte avec la personne.","Ralentis : ne donne pas l'impression de courir vers ton pitch."],e:"Enregistre deux introductions de 30 secondes : une volontairement « commerciale », une en posture consultant. Compare vitesse, ton, quantité d'arguments et place laissée au prospect."},
+{t:"Les niveaux de conscience",k:"Ton travail est d'identifier où se situe la personne et de l'aider à voir ce qu'elle ne voit pas encore.",p:["Niveau 1 (Très conscient) : Problème identifié, solutions connues. Mission : Créer le match et sécuriser la décision.","Niveau 2 (Conscient du problème) : La solution reste floue. Mission : Clarifier le véhicule et les croyances.","Niveau 3 (Conscience faible) : Le système dysfonctionne mais la cause n'est pas comprise. Mission : Faire émerger le problème et ses conséquences.","Niveau 4 (Faible conscience) : Peu ou pas de lecture du problème. Mission : Explorer avant toute tentative de proposition.","Le vrai job : Élever le niveau de conscience sans forcer une conclusion."],e:"Explique les quatre niveaux sans regarder le tableau. Si tu ne peux pas les expliquer simplement, tu ne les maîtrises pas encore."},
+{t:"B2C et B2B",k:"Le point commun reste le même : une situation actuelle produit un résultat insatisfaisant. En revanche, la nature du mécanisme change.",p:["B2C : La personne est au centre (Émotions, identité, discipline, croyances).","B2C : On explore l'identité actuelle, l'identité désirée et ce qui empêche de l'incarner.","B2B : Le système de l'entreprise est au centre (Metrics, organisation, process, ressources).","B2B : On explore le mécanisme : acquisition, conversion, organisation, pertes de temps ou d'argent."],e:"Choisis un même problème par exemple « augmenter les revenus ». Écris 5 questions B2C centrées sur la personne, puis 5 questions B2B centrées sur le système."},
+{t:"Lire les profils DISC",k:"Ne « joue » pas un personnage pour matcher un profil. Reste toi-même et adapte la structure, la vitesse et le niveau de preuve.",p:["Rouge (Direct, dominant) : Va droit au but, garde ton cadre pour éviter qu'il ne reprenne le lead.","Jaune (Expressif) : Part dans tous les sens. Canalise sans casser l'énergie.","Vert (Harmonie) : Dit oui sans dévoiler son intention. Sécurise la vérité derrière l'accord.","Bleu (Analytique) : Demande beaucoup d'informations. Structure, prouve, ne survends pas."],e:"Analyse tes prochains appels : identifie les prédominances comportementales et adapte ton espace de parole sans changer ton intention."},
+{t:"Voix, énergie, authenticité",k:"Maîtrise le fond, puis fais vivre la forme. L'énergie doit être la tienne, pas une fausse énergie copiée sur un autre closer.",p:["Les mots ne portent pas seuls l'intention : mets de l'émotion, accentue certains mots, ralentis et évite les tics de langage.","L'authenticité n'est pas la perfection. Dire « je ne sais pas » peut renforcer la confiance.","Question sous la question : cherche le besoin réel. « Il y a une raison particulière qui te pousse à me poser cette question ? »."],e:"Dis « Bonjour, comment tu vas ? » avec enthousiasme, puis curiosité, puis calme et autorité, puis surprise. Écoute l'enregistrement : est-ce que l'émotion s'entend sans devenir théâtrale ?"},
+{t:"Cadrer avec OPA",k:"Le cadrage réduit la friction et donne une structure à l'échange. OPA : Objectif, Plan, Action.",p:["Objectif : Définir pourquoi l'appel existe et ce qu'on cherche à vérifier.","Plan : Expliquer comment l'échange va se dérouler.","Action : Poser les deux issues possibles (continuer si ça matche, se quitter proprement sinon).","Ouverture : « Maintenant que je t'ai cadré l'échange, qu'est-ce qui t'a motivé à prendre cet appel ? »."],e:"Reformule le script OPA avec tes propres mots et ton énergie. Le but n'est pas de réciter."},
+{t:"La discovery profonde",k:"Plus tu découvres tôt les vraies raisons qui bloquent la décision, moins tu dois « combattre » des objections à la fin.",p:["La chaîne de profondeur : Situation, Problème, Cause, Impact, Temps, Tentatives, Croyances, Décision.","Quand une réponse semble superficielle, ne saute pas à la question suivante. Reste dessus.","Questions types : « Qu'est-ce que tu veux dire exactement par là ? », « Pourquoi c'est important pour toi ? ».","Si on avance de six mois sans changement, qu'est-ce qui se passe ?"],e:"Prends une réponse simple : « Je veux gagner plus ». Écris une chaîne de 7 questions qui t'emmène du symptôme vers la cause, puis vers l'impact."},
+{t:"SPIN et questions ouvertes",k:"Le SPIN sert de grille de lecture, il ne remplace pas l'écoute.",p:["Situation : Comprendre le contexte actuel.","Problem : Identifier les frictions et difficultés.","Implication : Faire préciser l'impact et les conséquences (l'image de la « tête dans les toilettes »).","Need-payoff : Faire verbaliser la valeur d'une situation améliorée (le moment où on en sort).","Une bonne question ouvre une réflexion, écoute les mots employés par le prospect et rebondis dessus."],e:"Analyse l'un de tes derniers appels et catégorise tes questions : as-tu laissé le prospect verbaliser la sortie (Need-payoff) ?"},
+{t:"Reframe et objections",k:"Il ne s'agit pas d'imposer une conclusion mais de rendre visibles les conséquences des options.",p:["1. Valide. 2. Clarifie la croyance. 3. Questionne la logique. 4. Expose deux scénarios. 5. Laisse le prospect verbaliser ce qui a du sens.","Croyance (« Je peux le faire seul ») : Revenir aux tentatives et aux résultats passés.","Timing (« Plus tard ») : Explorer le coût de l'inaction et ce qui changera réellement plus tard.","Valeur / Logistique : Comprendre la perception avant de parler financement et traiter factuellement.","Garde-fou : Responsabiliser n'est pas pousser quelqu'un à prendre un risque financier déraisonnable."],e:"Écris un reframe complet pour l'une de tes objections fréquentes, en utilisant le modèle des deux scénarios : « Si tu continues... vs Si tu modifies... »."},
+{t:"Le playbook d'appel",k:"Une structure solide permet de rester humain et d'éviter de forcer la transition.",p:["Étapes : Connexion, OPA, Ouverture, Discovery, Synthèse, Transition, Proposition, Décision, Logistique.","Erreurs : Surjouer l'énergie, pitcher trop tôt, interpréter sans valider, présenter toutes les features, débattre.","Avant l'appel : Je connais les limites de l'offre et je suis prêt à dire non si ça ne matche pas.","Après l'appel : Identifier l'unique micro-ajustement à travailler au prochain call."],e:"Remplis la checklist après call sur ton prochain appel : Quel était son vrai problème ? Quelle cause ai-je identifiée ? Quelle croyance a dirigé sa décision ?"},
+{t:"Plan d'entraînement, 30 jours",k:"Le but n'est pas d'accumuler des concepts. Le but est de transformer les concepts en réflexes.",p:["Semaine 1 (Posture + intonation) : 10 min d'enregistrement voix + 1 cadrage OPA par jour.","Semaine 2 (Questions + profondeur) : 1 chaîne de 7 questions à partir d'une réponse simple.","Semaine 3 (Discovery + SPIN) : Analyse d'un call (Situation / Problème / Impact / Need-payoff).","Semaine 4 (Reframe + décision) : Écrire 3 reframes puis les jouer à voix haute."],e:"Utilise la Scorecard personnelle pour t'évaluer de 1 à 5 sur : Posture consultant, Authenticité, Cadrage OPA, Questions ouvertes, Discovery et Reframe."}
+];
+
+const $=id=>document.getElementById(id);
+let done=[];try{done=JSON.parse(localStorage.getItem('sr-done')||'[]')}catch(e){}
+let cur=0;
+const save=()=>{try{localStorage.setItem('sr-done',JSON.stringify(done))}catch(e){}};
+
+function nav(){
+  const l = $('list');
+  if(!l) return;
+  l.innerHTML=MODULES.map((m,i)=>`<button data-i="${i}" class="${done.includes(i)?'ok':''}" ${i===cur?'aria-current="true"':''}><span class="n">${i+1}</span><span>${m.t}</span></button>`).join('');
+  const p=Math.round(done.length/MODULES.length*100);
+  const fill = $('fill'); if(fill) fill.style.width=p+'%';
+  const pct = $('pct'); if(pct) pct.textContent=done.length+' / '+MODULES.length+' modules terminés';
+}
+
+function show(i,scroll){
+  cur=i;const m=MODULES[i];
+  const v = $('view');
+  if(!v) return;
+  v.innerHTML=`<div class="mod">Module ${i+1} sur ${MODULES.length}</div><h3>${m.t}</h3><p class="key">${m.k}</p><ul>${m.p.map(x=>`<li>${x}</li>`).join('')}</ul><div class="ex"><h4>Exercice</h4><p>${m.e}</p></div><div class="acts"><button class="btn" id="done">${done.includes(i)?'Module terminé ✓':'Marquer comme terminé'}</button>${i>0?'<button class="btn ghost" id="prev">Précédent</button>':''}${i<MODULES.length-1?'<button class="btn ghost" id="next">Suivant</button>':''}</div>`;
+  nav();
+  
+  /* Sécurisation de l'historique pour les fichiers en local (évite le plantage SecurityError) */
+  try { history.replaceState(null,'','#module-'+(i+1)); } catch(e) {}
+  
+  if(scroll) v.scrollIntoView({block:'start'});
+}
+
+const listEl = $('list');
+if(listEl) {
+  listEl.onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i,window.innerWidth<=860)};
+}
+const viewEl = $('view');
+if(viewEl) {
+  viewEl.onclick=e=>{
+    if(e.target.id==='done'){done=done.includes(cur)?done.filter(x=>x!==cur):[...done,cur];save();show(cur)}
+    if(e.target.id==='next')show(cur+1,true);
+    if(e.target.id==='prev')show(cur-1,true);
+  };
+}
+
+/* Gestion du loader totalement sécurisée */
+const MIN=600, t0=Date.now();
+let entered=false;
+function enter(){
+  if(entered) return; 
+  entered=true;
+  const loaderEl = $('loader');
+  if(!loaderEl) { document.body.classList.remove('loading'); return; }
+  
+  const wait=Math.max(0,MIN-(Date.now()-t0));
+  setTimeout(()=>{
+    loaderEl.classList.add('out');
+    document.body.classList.remove('loading');
+    setTimeout(()=>loaderEl.remove(), 400);
+  }, wait);
+}
+
+if(document.readyState==='complete') enter(); else window.addEventListener('load', enter);
+setTimeout(enter, 3000); // Fallback garanti
+
+/* Regex corrigée pour ne pas casser le JS */
+const hashMatch = location.hash.match(/#module-(\d+)/);
+show(hashMatch && MODULES[hashMatch[1]-1] ? hashMatch[1]-1 : 0);
+</script>
+</body>
+</html>
