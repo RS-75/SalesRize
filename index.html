@@ -7,67 +7,181 @@
 <meta name="description" content="Passe de commercial à consultant : discovery, reframe et décision. 12 modules et un plan d'entraînement de 30 jours.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0F1A2E;--paper:#F5F6F8;--blue:#2A44F5;--mist:#E1E5EE;--slate:#5B6578;--white:#fff;
---d:'Bricolage Grotesque',system-ui,sans-serif;--s:'Newsreader',Georgia,serif}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 19px/1.6 var(--s)}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-header{padding:22px 0}
-header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font:800 22px var(--d);text-decoration:none;letter-spacing:-.02em}
-header a.l{font:500 16px var(--d);text-decoration:none;color:var(--slate)}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:56px 0 88px}
-h1{font:800 clamp(40px,6vw,72px)/1.02 var(--d);letter-spacing:-.035em}
-.hero p.sub{margin:24px 0 32px;font-size:21px;color:var(--slate);max-width:30em}
-.btn{display:inline-block;background:var(--blue);color:var(--white);font:700 17px var(--d);padding:15px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
-.btn:hover{background:var(--ink)}
-.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--white)}
-.facts{display:flex;gap:28px;margin-top:36px;font:500 15px var(--d);color:var(--slate);flex-wrap:wrap}
-.facts b{color:var(--ink);font-weight:700}
-.chain{list-style:none;padding:0;position:relative}
-.chain li{font:700 20px var(--d);padding:7px 0 7px 22px;border-left:2px solid var(--mist);position:relative}
-.chain li:nth-child(n){margin-left:calc(var(--i)*14px)}
-.chain li::before{content:"";position:absolute;left:-6px;top:50%;width:10px;height:10px;border-radius:50%;background:var(--ink)}
-.chain li:last-child{color:var(--blue);border-color:var(--blue)}
-.chain li:last-child::before{background:var(--blue)}
-.cap{font:500 14px var(--d);color:var(--slate);margin-top:16px}
-#cours{background:var(--white);padding:72px 0 96px;border-top:1px solid var(--mist)}
-#cours h2{font:800 clamp(30px,4vw,44px)/1.1 var(--d);letter-spacing:-.03em;margin-bottom:8px}
-.lead{color:var(--slate);margin-bottom:40px}
-.player{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
-nav{position:sticky;top:20px}
-.bar{height:6px;background:var(--mist);border-radius:6px;overflow:hidden;margin:0 0 6px}
-.bar i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
-.pct{font:500 14px var(--d);color:var(--slate);margin-bottom:16px}
-nav button{display:flex;gap:12px;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:10px 12px;font:500 16px/1.3 var(--d);color:var(--slate);cursor:pointer}
-nav button:hover{background:var(--paper)}
-nav button[aria-current=true]{background:var(--ink);color:var(--white)}
-nav .n{min-width:22px;font-weight:700}
-nav .ok::after{content:"✓";margin-left:auto;color:var(--blue);font-weight:800}
-nav button[aria-current=true].ok::after{color:var(--white)}
-article{max-width:660px;min-height:480px}
-article h3{font:800 clamp(28px,3.5vw,40px)/1.1 var(--d);letter-spacing:-.03em;margin-bottom:24px}
-.mod{font:500 15px var(--d);color:var(--slate);margin-bottom:8px}
-.key{font:700 clamp(20px,2.4vw,25px)/1.35 var(--d);border-left:4px solid var(--blue);padding-left:20px;margin-bottom:28px;letter-spacing:-.01em}
-article ul{padding-left:1.1em;margin-bottom:28px}
-article li{margin-bottom:10px}
-article li::marker{color:var(--blue)}
-.ex{background:var(--paper);border-radius:14px;padding:22px 24px;margin-bottom:32px}
-.ex h4{font:700 17px var(--d);margin-bottom:6px}
-.acts{display:flex;gap:12px;flex-wrap:wrap}
-footer{padding:40px 0;font:500 15px var(--d);color:var(--slate)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+:root {
+  --ink: #0F1A2E;
+  --blue: #2A44F5;
+  --blue-light: #7F93FF;
+  --purple: #9b51e0;
+  --mist: #E1E5EE;
+  --slate: #5B6578;
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --d: 'Bricolage Grotesque', system-ui, sans-serif;
+  --s: 'Newsreader', Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { 
+  background-color: #F4F6F9; 
+  color: var(--ink); 
+  font: 400 19px/1.6 var(--s);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* --- Arrière-plan fluide et flouté (Blobs) --- */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  animation: float 20s infinite ease-in-out alternate;
+}
+.blob.b1 {
+  background: var(--blue-light);
+  width: 50vw; height: 50vw;
+  top: -10%; left: -15%;
+  animation-duration: 25s;
+}
+.blob.b2 {
+  background: var(--purple);
+  width: 40vw; height: 40vw;
+  bottom: -10%; right: -10%;
+  animation-delay: -5s;
+}
+.blob.b3 {
+  background: var(--blue);
+  width: 30vw; height: 30vw;
+  top: 40%; left: 40%;
+  opacity: 0.3;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5vw, 5vh) scale(1.1); }
+  100% { transform: translate(-5vw, 10vh) scale(0.9); }
+}
+
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+header { padding: 30px 0; }
+header .wrap { display: flex; justify-content: space-between; align-items: center; }
+.logo { font: 800 24px var(--d); text-decoration: none; letter-spacing: -.02em; }
+header a.l { font: 500 16px var(--d); text-decoration: none; color: var(--slate); transition: color 0.3s; }
+header a.l:hover { color: var(--blue); }
+
+.hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; padding: 40px 0 88px; }
+h1 { font: 800 clamp(40px, 6vw, 72px)/1.02 var(--d); letter-spacing: -.035em; }
+.hero p.sub { margin: 24px 0 32px; font-size: 21px; color: var(--slate); max-width: 30em; }
+
+/* Boutons épurés avec transitions fluides */
+.btn {
+  display: inline-flex; justify-content: center; align-items: center;
+  background: var(--blue); color: var(--white);
+  font: 700 17px var(--d); padding: 15px 28px;
+  border-radius: 999px; text-decoration: none; border: 0; cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(42, 68, 245, 0.25);
+}
+.btn:hover { background: var(--ink); box-shadow: 0 8px 24px rgba(15, 26, 46, 0.2); transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); box-shadow: none; }
+.btn.ghost:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+
+.facts { display: flex; gap: 28px; margin-top: 36px; font: 500 15px var(--d); color: var(--slate); flex-wrap: wrap; }
+.facts b { color: var(--ink); font-weight: 700; }
+
+.chain { list-style: none; padding: 0; position: relative; }
+.chain li { font: 700 20px var(--d); padding: 7px 0 7px 22px; border-left: 2px solid rgba(15,26,46,0.1); position: relative; }
+.chain li:nth-child(n) { margin-left: calc(var(--i) * 14px); transition: margin 0.5s ease; }
+.chain li::before { content: ""; position: absolute; left: -6px; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+.chain li:last-child { color: var(--blue); border-color: var(--blue); }
+.chain li:last-child::before { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
+.cap { font: 500 14px var(--d); color: var(--slate); margin-top: 16px; }
+
+/* Section des cours séparée visuellement avec Glassmorphism */
+#cours { padding: 40px 0 120px; }
+#cours h2 { font: 800 clamp(30px, 4vw, 44px)/1.1 var(--d); letter-spacing: -.03em; margin-bottom: 8px; }
+.lead { color: var(--slate); margin-bottom: 40px; font-family: var(--d); font-weight: 500; }
+
+.player { display: grid; grid-template-columns: 320px 1fr; gap: 40px; align-items: start; }
+
+/* Navigation séparée en carte verre */
+nav {
+  position: sticky; top: 40px;
+  background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border); border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.04);
+}
+.bar { height: 6px; background: rgba(0,0,0,0.05); border-radius: 6px; overflow: hidden; margin: 0 0 10px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--blue); transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.pct { font: 500 14px var(--d); color: var(--slate); margin-bottom: 20px; }
+
+nav button {
+  display: flex; gap: 12px; width: 100%; text-align: left; background: transparent; border: 0; 
+  border-radius: 12px; padding: 12px 14px; font: 500 16px/1.3 var(--d); color: var(--slate); 
+  cursor: pointer; transition: all 0.3s ease; margin-bottom: 4px;
+}
+nav button:hover { background: rgba(255,255,255,0.8); transform: translateX(4px); color: var(--ink); }
+nav button[aria-current=true] { background: var(--white); color: var(--ink); box-shadow: 0 4px 12px rgba(0,0,0,0.05); transform: translateX(4px); font-weight: 700; }
+nav .n { min-width: 24px; font-weight: 700; opacity: 0.5; }
+nav button[aria-current=true] .n { opacity: 1; color: var(--blue); }
+nav .ok::after { content: "✓"; margin-left: auto; color: var(--blue); font-weight: 800; opacity: 0; transition: opacity 0.3s; }
+nav .ok::after { opacity: 1; }
+
+/* Contenu du cours en carte épurée avec animation d'entrée */
+article {
+  background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border); border-radius: 32px;
+  padding: 48px; min-height: 500px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+}
+
+/* Animation de fluidité pour le texte */
+.reveal-content {
+  animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+article h3 { font: 800 clamp(28px, 3.5vw, 40px)/1.1 var(--d); letter-spacing: -.03em; margin-bottom: 24px; }
+.mod { font: 600 14px var(--d); color: var(--blue); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.key { font: 700 clamp(20px, 2.4vw, 25px)/1.35 var(--d); border-left: 4px solid var(--blue); padding-left: 24px; margin-bottom: 32px; letter-spacing: -.01em; color: var(--ink); }
+article ul { padding-left: 1.2em; margin-bottom: 32px; }
+article li { margin-bottom: 12px; color: #333; }
+article li::marker { color: var(--blue); }
+
+.ex { background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.04); border-radius: 20px; padding: 28px 32px; margin-bottom: 40px; }
+.ex h4 { font: 700 17px var(--d); margin-bottom: 8px; color: var(--blue); }
+.ex p { margin: 0; }
+
+.acts { display: flex; gap: 16px; flex-wrap: wrap; }
+
+footer { padding: 40px 0; font: 500 15px var(--d); color: var(--slate); text-align: center; }
+
+/* Loader inchangé et ultra rapide */
 #loader{position:fixed;inset:0;z-index:100;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .4s ease,visibility .4s}
 #loader.out{opacity:0;visibility:hidden}
 #loader .lg{font:800 clamp(40px,9vw,84px) var(--d);letter-spacing:-.04em;color:var(--white);display:flex;overflow:hidden}
 #loader .lg span{display:inline-block;transform:translateY(110%);animation:up .4s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--k)*30ms)}
-#loader .lg span:nth-child(n+6){color:#7F93FF}
+#loader .lg span:nth-child(n+6){color:var(--blue-light)}
 #loader .ln{width:min(220px,50vw);height:3px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
 #loader .ln i{display:block;height:100%;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left;animation:ld .6s ease-in-out forwards}
 #loader .tg{font:500 14px var(--d);color:rgba(255,255,255,.55);letter-spacing:.02em}
@@ -75,9 +189,24 @@ body.loading{overflow:hidden}
 @keyframes up{to{transform:none}}
 @keyframes ld{to{transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){#loader .lg span{transform:none;animation:none}#loader .ln i{animation-duration:.01s}}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .player { grid-template-columns: 1fr; }
+  nav { position: relative; top: 0; margin-bottom: 32px; }
+  article { padding: 32px 24px; }
+}
 </style>
 </head>
 <body class="loading">
+
+<!-- Taches floutées d'arrière plan -->
+<div class="ambient-bg" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
 <div id="loader" role="status" aria-label="Chargement de SalesRize">
   <div class="lg" aria-hidden="true"><span style="--k:0">S</span><span style="--k:1">a</span><span style="--k:2">l</span><span style="--k:3">e</span><span style="--k:4">s</span><span style="--k:5">R</span><span style="--k:6">i</span><span style="--k:7">z</span><span style="--k:8">e</span></div>
   <div class="ln"><i></i></div>
@@ -90,23 +219,20 @@ body.loading{overflow:hidden}
 <section class="wrap hero">
   <div>
     <h1>Comprendre avant de convaincre.</h1>
-    <p class="sub">Le manuel de terrain SalesRize pour passer de commercial à consultant : discovery, reframe et décision. Tu lis, tu t'entraînes à voix haute, tu ajustes.</p>
+    <p class="sub">Le manuel de terrain SalesRize pour passer de commercial à consultant : discovery, reframe et décision. Tu lis, tu t'entraînes, tu ajustes.</p>
     <div class="acts"><a class="btn" href="#cours">Commencer le module 1</a><a class="btn ghost" href="#cours" id="prog">Voir le programme</a></div>
-    <div class="facts"><span><b>12</b> modules</span><span><b>30 jours</b> d'entraînement</span><span><b>1</b> micro-ajustement par call</span></div>
+    <div class="facts"><span><b>12</b> modules</span><span><b>30 jours</b> d'entraînement</span><span><b>1</b> micro-ajustement</span></div>
   </div>
   <div aria-hidden="true">
     <ol class="chain">
       <li style="--i:0">Situation</li><li style="--i:1">Problème</li><li style="--i:2">Cause</li><li style="--i:3">Impact</li>
       <li style="--i:4">Temps</li><li style="--i:5">Tentatives</li><li style="--i:6">Croyances</li><li style="--i:7">Décision</li>
     </ol>
-    <p class="cap">La chaîne de profondeur : tu ne t'arrêtes pas au symptôme.</p>
   </div>
 </section>
 
 <section id="cours">
   <div class="wrap">
-    <h2>The Closing Playbook</h2>
-    <p class="lead">Un module à la fois. Ta progression est gardée sur cet appareil.</p>
     <div class="player">
       <nav aria-label="Modules">
         <div class="t"><div class="bar"><i id="fill"></i></div><div class="pct" id="pct"></div></div>
@@ -118,7 +244,7 @@ body.loading{overflow:hidden}
 </section>
 </main>
 
-<footer><div class="wrap"><span>SalesRize · No pain, no sales</span><span>Méthode &amp; coaching : Walid Mellal</span></div></footer>
+<footer><div class="wrap">SalesRize · Méthode &amp; coaching : Walid Mellal</div></footer>
 
 <script>
 /* ====== CONTENU DES COURS ====== */
@@ -155,13 +281,40 @@ function show(i,scroll){
   cur=i;const m=MODULES[i];
   const v = $('view');
   if(!v) return;
-  v.innerHTML=`<div class="mod">Module ${i+1} sur ${MODULES.length}</div><h3>${m.t}</h3><p class="key">${m.k}</p><ul>${m.p.map(x=>`<li>${x}</li>`).join('')}</ul><div class="ex"><h4>Exercice</h4><p>${m.e}</p></div><div class="acts"><button class="btn" id="done">${done.includes(i)?'Module terminé ✓':'Marquer comme terminé'}</button>${i>0?'<button class="btn ghost" id="prev">Précédent</button>':''}${i<MODULES.length-1?'<button class="btn ghost" id="next">Suivant</button>':''}</div>`;
+  
+  // Wrapper le contenu dans un div avec la classe d'animation "reveal-content"
+  v.innerHTML=`
+    <div class="reveal-content" style="animation: none;">
+      <div class="mod">Module ${i+1} sur ${MODULES.length}</div>
+      <h3>${m.t}</h3>
+      <p class="key">${m.k}</p>
+      <ul>${m.p.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="ex">
+        <h4>Exercice</h4>
+        <p>${m.e}</p>
+      </div>
+      <div class="acts">
+        <button class="btn" id="done">${done.includes(i)?'Module terminé ✓':'Marquer comme terminé'}</button>
+        ${i>0?'<button class="btn ghost" id="prev">Précédent</button>':''}
+        ${i<MODULES.length-1?'<button class="btn ghost" id="next">Suivant</button>':''}
+      </div>
+    </div>
+  `;
+  
+  // Forcer le reflow pour relancer l'animation
+  const content = v.querySelector('.reveal-content');
+  content.offsetHeight; 
+  content.style.animation = null;
+
   nav();
   
-  /* Sécurisation de l'historique pour les fichiers en local (évite le plantage SecurityError) */
   try { history.replaceState(null,'','#module-'+(i+1)); } catch(e) {}
-  
-  if(scroll) v.scrollIntoView({block:'start'});
+  if(scroll) {
+    // Scroll doux vers le haut du cours
+    const offset = 20;
+    const top = v.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({top: top, behavior: 'smooth'});
+  }
 }
 
 const listEl = $('list');
@@ -171,13 +324,12 @@ if(listEl) {
 const viewEl = $('view');
 if(viewEl) {
   viewEl.onclick=e=>{
-    if(e.target.id==='done'){done=done.includes(cur)?done.filter(x=>x!==cur):[...done,cur];save();show(cur)}
+    if(e.target.id==='done'){done=done.includes(cur)?done.filter(x=>x!==cur):[...done,cur];save();show(cur, false)}
     if(e.target.id==='next')show(cur+1,true);
     if(e.target.id==='prev')show(cur-1,true);
   };
 }
 
-/* Gestion du loader totalement sécurisée */
 const MIN=600, t0=Date.now();
 let entered=false;
 function enter(){
@@ -195,9 +347,8 @@ function enter(){
 }
 
 if(document.readyState==='complete') enter(); else window.addEventListener('load', enter);
-setTimeout(enter, 3000); // Fallback garanti
+setTimeout(enter, 3000);
 
-/* Regex corrigée pour ne pas casser le JS */
 const hashMatch = location.hash.match(/#module-(\d+)/);
 show(hashMatch && MODULES[hashMatch[1]-1] ? hashMatch[1]-1 : 0);
 </script>
