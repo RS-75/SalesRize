@@ -89,6 +89,14 @@ h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em;line-height:1.2;margin
 .steps p{font-size:1rem;line-height:1.5}
 .soon{margin-top:20px;font-size:1rem;color:var(--gris);font-style:italic}
 
+/* Paiement */
+.pay{margin-top:32px;padding:22px;border:1px solid var(--trait);border-radius:18px;background:var(--braise);display:grid;gap:16px}
+.pay-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.prix{font:800 2.6rem/1 var(--t);color:var(--creme)}
+.pay-top span{color:var(--gris);font-size:.95rem}
+.pay .btn{text-align:center;font-size:1.05rem}
+.pay small{font-size:.85rem;color:var(--gris);line-height:1.5}
+
 /* Contact */
 .contact{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,4vw,56px);align-items:start}
 .contact .lead{margin-top:0}
@@ -149,7 +157,13 @@ textarea{min-height:130px;resize:vertical}
           <div><strong>12</strong>modules</div>
           <div><strong>30</strong>jours d'entraînement</div>
         </div>
-        <div class="btns"><a class="btn p" href="#contact">Accéder au cours</a></div>
+
+        <!-- PAIEMENT : remplace PRIX € et le lien Stripe ci-dessous -->
+        <div class="pay" id="paiement">
+          <div class="pay-top"><strong class="prix">PRIX €</strong><span>Paiement unique, accès immédiat</span></div>
+          <a class="btn p" href="https://buy.stripe.com/VOTRE_LIEN" target="_blank" rel="noopener">Payer la formation</a>
+          <small>Paiement sécurisé par Stripe : carte bancaire, Apple Pay et Google Pay. Tes données de carte ne passent jamais par ce site.</small>
+        </div>
       </div>
       <ol class="steps">
         <li><h3>Discovery</h3><p>Poser les bonnes questions pour comprendre le vrai problème.</p></li>
